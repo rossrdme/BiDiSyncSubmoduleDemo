@@ -1,0 +1,106 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Owl Sanctuary API",
+      "version": "1.0.0",
+      "description": "A minimal API for owl enthusiasts."
+    },
+    "tags": [
+      {
+        "name": "Owls",
+        "description": "Operations related to owl management"
+      },
+      {
+        "name": "Habitats",
+        "description": "Operations related to owl habitats"
+      }
+    ],
+    "paths": {
+      "/owls": {
+        "get": {
+          "tags": ["Owls"],
+          "summary": "List all owls",
+          "operationId": "foo",
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/BasicResponse"
+            }
+          }
+        },
+        "post": {
+          "tags": ["Owls"],
+          "summary": "Add a new owl",
+          "responses": {
+            "201": {
+              "$ref": "#/components/responses/BasicResponse"
+            }
+          }
+        }
+      },
+      "/owls/{id}": {
+        "get": {
+          "tags": ["Owls"],
+          "summary": "Get details of a specific owl",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "The ID of the owl"
+            }
+          ],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/BasicResponse"
+            }
+          }
+        }
+      },
+      "/habitats": {
+        "get": {
+          "tags": ["Habitats"],
+          "summary": "List owl habitats",
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/BasicResponse"
+            }
+          }
+        }
+      },
+      "/sightings": {
+        "get": {
+          "tags": ["Owls"],
+          "summary": "List recent owl sightings",
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/BasicResponse"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "responses": {
+        "BasicResponse": {
+          "description": "A basic response",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "example": "Success"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
