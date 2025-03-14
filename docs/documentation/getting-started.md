@@ -7,6 +7,8 @@ hidden: false
 ---
 This hub is for demonstrating the submodule sync method of bidi sync.
 
+Edit 001
+
 <br />
 
 🍊🍊🍊🍊🍊
